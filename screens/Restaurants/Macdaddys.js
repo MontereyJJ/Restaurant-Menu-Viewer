@@ -1,14 +1,20 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Container, Fab, Tab, Tabs, TabHeading, Card, CardItem, Button, Left, Right, Body, Icon, Text } from 'native-base';
-import { ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet, Image, Platform, UIManager } from 'react-native';
+import { Container, Fab, Tab, ScrollableTab, Tabs, TabHeading, Card, CardItem, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { ScrollView, FlatList } from 'react-native-gesture-handler';
+import MacDaddyDish from '../../data/MacDaddyDish';
 
 export default class Chitos extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: 'true'
+      active: 'true',
+      item: MacDaddyDish
     };
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
   }
     static navigationOptions = {
         title: 'Menu',
@@ -19,29 +25,87 @@ export default class Chitos extends React.Component {
     render() {
         return (
             <Container>
-        <Tabs>
-          <Tab heading={ <TabHeading><Text>Starter</Text></TabHeading>}>
+        <Tabs renderTabBar={()=> <ScrollableTab />}>
+          <Tab heading={ <TabHeading><Text>Main Dish</Text></TabHeading>}>
             <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
-                <ScrollView>
-                <Card style={{flex: 0, borderRadius: 10}}>
-                <CardItem cardBody bordered >
-                  <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
-                </CardItem>
-                <CardItem>
-                  <Body>
-                    <Text>Ice Cream Cookie</Text>
-                    <Text>Php 00.00</Text>
-                  </Body>
-                </CardItem>
-              </Card>
-                </ScrollView>
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "maindish"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
             </Container>
           </Tab>
-          <Tab heading={ <TabHeading><Text>Main Course</Text></TabHeading>}>
-          <Text>Tab 2</Text>
+          <Tab heading={ <TabHeading><Text>Snacks</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "snacks"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
           </Tab>
-          <Tab heading={ <TabHeading><Text>Desserts</Text></TabHeading>}>
-          <Text>Tab 3</Text>
+          <Tab heading={ <TabHeading><Text>Drinks</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "drinks"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
           </Tab>
         </Tabs>
             </Container>

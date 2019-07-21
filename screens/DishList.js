@@ -6,19 +6,20 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { SearchBar } from 'react-native-elements';
 
 import staticRestaurant from '../data/staticRestaurant';
+import YeloLaneDish from '../data/YeloLaneDish';
  
 export default class App extends React.Component {
   static navigationOptions = {
     tabBarIcon:({ tintColor}) => {
-        return <Icon name='md-home' style={{color: tintColor}} />
+        return <Icon name='bars' type='FontAwesome5' style={{color: tintColor}} />
     }
 }
   constructor(props) {
     super(props);
     this.state = {
       query: "",
-      item: staticRestaurant,
-      dataBackup: staticRestaurant,
+      item: YeloLaneDish,
+      dataBackup: YeloLaneDish,
       isLoading: false,
       page: 1,
       seed: 1,
@@ -78,9 +79,14 @@ export default class App extends React.Component {
           enableEmptySections={true}
           style={{ marginTop: 10, padding: 10, backgroundColor: '#dfdfdf' }}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => 
+          renderItem={({ item }) =>
+            {
+              if(item.category == "Pizza"){
+                return <Text>{item.name}</Text>
+              }
+            }
             // Single Comes here which will be repeatative for the FlatListItems
-            <Text>Dishes</Text>
+            
           }
         />
       </View>
