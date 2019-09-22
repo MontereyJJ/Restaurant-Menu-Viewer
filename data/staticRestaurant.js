@@ -53,6 +53,34 @@ export default (staticRestaurant = [
         time: "08:45 am - 12:00 am",
         navi: "ChitosR"
     },
+    {
+        name: "Van and Hylas",
+        thumb: require("../img/vh/vhthumb.jpg"),
+        image: require("../img/vh/vhlist.jpg"),
+        location: "Mira-Monte Subdivision Lucban",
+        type: "Filipino Restaurant",
+        time: "09:00 am - 09:00 pm",
+        navi: "VHR"
+    },
+    {
+        name: "Kubo Sizzlers 2",
+        thumb: require("../img/kubo/kubothumb.jpg"),
+        image: require("../img/kubo/kuboliah.jpg"),
+        location: "Brgy. Tinamnan Miramonte Circle Lucban",
+        type: "Filipino Restaurant",
+        time: "09:00 am - 09:30 pm",
+        navi: "KuboR"
+    },
+    {
+        name: "GROUNDZERO House of Pizza",
+        thumb: require("../img/groundzero/groundthumb.jpg"),
+        image: require("../img/groundzero/groundlist.jpg"),
+        location: "Quezon Avenue Corner Regidor St., Lucban, Quezon Province",
+        type: "Pizza Restaurant",
+        time: "10:00 am - 12:00 am",
+        navi: "GroundR"
+    },
+
     
 
 ]);

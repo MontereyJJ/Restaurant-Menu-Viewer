@@ -536,43 +536,43 @@ export default (yelolaneDish = [
     },
     {
         name:"Cheese Burger w/ Fries",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "165",
         groupings: "snacks"
     },
     {
         name:"Croque Madame",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "175",
         groupings: "snacks"
     },
     {
         name:"Croque Monsiuer",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "165",
         groupings: "snacks"
     },
     {
         name:"Premium Toast-Bacon",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "135",
         groupings: "snacks"
     },
     {
         name:"Premium Toast-Ham",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "135",
         groupings: "snacks"
     },
     {
         name:"Submarine-Bacon",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "145",
         groupings: "snacks"
     },
     {
         name:"Submarine-Ham",
-        category: "Sandwhiches",
+        category: "sandwiches",
         price: "145",
         groupings: "snacks"
     },

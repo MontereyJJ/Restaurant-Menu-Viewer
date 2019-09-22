@@ -1,14 +1,20 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Container, Fab, Tab, Tabs, TabHeading, Card, CardItem, Button, Left, Right, Body, Icon, Text } from 'native-base';
-import { ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet, Image, Platform, UIManager } from 'react-native';
+import { Container, Fab, Tab, ScrollableTab, Tabs, TabHeading, Card, CardItem, Button, Left, Right, Body, Icon, Text, Item } from 'native-base';
+import { ScrollView, FlatList } from 'react-native-gesture-handler';
+import ChitosDish from '../../data/ChitosDish';
 
 export default class Chitos extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: 'true'
+      active: 'true',
+      item: ChitosDish
     };
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
   }
     static navigationOptions = {
         title: 'Menu',
@@ -19,29 +25,330 @@ export default class Chitos extends React.Component {
     render() {
         return (
             <Container>
-        <Tabs>
-          <Tab heading={ <TabHeading><Text>Starter</Text></TabHeading>}>
+        <Tabs renderTabBar={()=> <ScrollableTab />}>
+          <Tab heading={ <TabHeading><Text>Rice Meals</Text></TabHeading>}>
             <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
-                <ScrollView>
-                <Card style={{flex: 0, borderRadius: 10}}>
-                <CardItem cardBody bordered >
-                  <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
-                </CardItem>
-                <CardItem>
-                  <Body>
-                    <Text>Ice Cream Cookie</Text>
-                    <Text>Php 00.00</Text>
-                  </Body>
-                </CardItem>
-              </Card>
-                </ScrollView>
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "ricemeals"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
             </Container>
           </Tab>
-          <Tab heading={ <TabHeading><Text>Main Course</Text></TabHeading>}>
-          <Text>Tab 2</Text>
+          <Tab heading={ <TabHeading><Text>Silog Meals</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "silogmeal"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Sisig/Sizzling Plate</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "sizzling"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
           </Tab>
           <Tab heading={ <TabHeading><Text>Desserts</Text></TabHeading>}>
-          <Text>Tab 3</Text>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "desserts"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Others</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "others"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Combo Meals</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "combomeals"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Soup</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "soup"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>KA Meals</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "kahitano"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Pizza</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "pizza"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Pasta/Noodles</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "pasta"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Snacks</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "snacks"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
+          </Tab>
+          <Tab heading={ <TabHeading><Text>Beverage</Text></TabHeading>}>
+            <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
+              <FlatList
+              data={this.state.item}
+              //Item Separator View
+              enableEmptySections={true}
+              style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => {
+                if(item.groupings== "beverage"){
+                  return<Card style={{flex: 0, borderRadius: 10}}>
+                    <CardItem cardBody bordered >
+                      <Image source={item.image} style={styles.cardImage}/>
+                    </CardItem>
+                    <CardItem>
+                      <Body>
+                        <Text>{item.name}</Text>
+                        <Text>Php {item.price}</Text>
+                      </Body>
+                    </CardItem>
+                    </Card>
+                }
+              }
+              }
+              />
+            </Container>
           </Tab>
         </Tabs>
             </Container>

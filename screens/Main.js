@@ -14,6 +14,12 @@ import Buddys from './Restaurants/Buddys';
 import BuddysInfo from './Restaurants/BuddysInfo';
 import MacDaddys from './Restaurants/Macdaddys';
 import MacDaddysInfo from './Restaurants/MacDaddysInfo';
+import Vans from './Restaurants/Vans';
+import VansInfo from './Restaurants/VansInfo';
+import KuboInfo from './Restaurants/KuboInfo';
+import GroundzeroInfo from './Restaurants/GroundzeroInfo';
+import Groundzero from './Restaurants/Groundzero';
+import Kubo from './Restaurants/Kubo';
 
 class Main extends React.Component {
     static navigationOptions = {
@@ -131,6 +137,60 @@ const MainNavigator = createStackNavigator({
             Info: MacDaddysInfo
         }),
         navigationOptions: {title: 'Mac Daddy\'s Grilled Burger',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    VHR: {
+        screen: createBottomTabNavigator({
+            Menu: Vans,
+            Info: VansInfo
+        }),
+        navigationOptions: {title: 'Van and Hylas Foodstuff',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    KuboR: {
+        screen: createBottomTabNavigator({
+            Menu: Kubo,
+            Info: KuboInfo
+        }),
+        navigationOptions: {title: 'Kubo Sizzlers',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    GroundR: {
+        screen: createBottomTabNavigator({
+            Menu: Groundzero,
+            Info: GroundzeroInfo
+        }),
+        navigationOptions: {title: 'GROUNDZERO House of Pizza',
                             headerStyle: {
                                 backgroundColor: '#4050b5',
             

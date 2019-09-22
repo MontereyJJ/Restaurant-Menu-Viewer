@@ -2,7 +2,7 @@ export default (rmaDish = [
     {
         name: "Garlic Fish Fillet",
         price: "70",
-        groupings: "sulyawrice"
+        groupings: "sulyawrice",
     },
     {
         name: "Pork Tongkatsu",
@@ -187,37 +187,37 @@ export default (rmaDish = [
     {
         name: "Mommy A. Burger",
         price: "85",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Enrique Club House",
         price: "95",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Hungarian Bhuda",
         price: "95",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Flor De Tuna",
         price: "80",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Crispy Siopao",
         price: "65",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Habug - er",
         price: "55",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Cheesy Bacon",
         price: "85",
-        groupings: "sandwhiches"
+        groupings: "sandwiches"
     },
     {
         name: "Red Iced Tea",

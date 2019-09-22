@@ -89,7 +89,7 @@ export default class Chitos extends React.Component {
               style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => {
-                if(item.groupings== "drinks"){
+                if(item.groupings== "rmaspecial"){
                   return<Card style={{flex: 0, borderRadius: 10}}>
                     <CardItem cardBody bordered >
                       <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
@@ -107,7 +107,7 @@ export default class Chitos extends React.Component {
               />
             </Container>
           </Tab>
-          <Tab heading={ <TabHeading><Text>Sandwhiches</Text></TabHeading>}>
+          <Tab heading={ <TabHeading><Text>sandwiches</Text></TabHeading>}>
             <Container style={{backgroundColor: '#dfdfdf', padding: 10}} >
               <FlatList
               data={this.state.item}
@@ -116,7 +116,7 @@ export default class Chitos extends React.Component {
               style={{ marginTop: 3, backgroundColor: '#dfdfdf' }}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => {
-                if(item.groupings== "sandwhiches"){
+                if(item.groupings== "sandwiches"){
                   return<Card style={{flex: 0, borderRadius: 10}}>
                     <CardItem cardBody bordered >
                       <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
