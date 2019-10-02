@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Text, View, Image, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
+import ViewPager from "@react-native-community/viewpager";
 
 var { width } = Dimensions.get('window');
 

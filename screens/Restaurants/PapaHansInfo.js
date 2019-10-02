@@ -3,7 +3,7 @@ import { StyleSheet, Image, View, Linking } from 'react-native';
 import {Container, Fab, Tab, Tabs, TabHeading, Card, CardItem, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import { ScrollView } from 'react-native-gesture-handler';
 import FetchLocation from '../../components/FetchLocation';
-import UsersMapPh from '../../components/UsersMapPh';
+import UsersMapPh from '../../components/userMaps/UsersMapPh';
 import PHSlider from '../../components/Sliders/PHSlider';
 export default class Chitos extends React.Component {
   state = {

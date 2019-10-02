@@ -38,7 +38,7 @@ export default class Chitos extends React.Component {
                 if(item.groupings== "maindish"){
                   return<Card style={{flex: 0, borderRadius: 10}}>
                     <CardItem cardBody bordered >
-                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                      <Image source={item.image} style={styles.cardImage}/>
                     </CardItem>
                     <CardItem>
                       <Body>
@@ -65,7 +65,7 @@ export default class Chitos extends React.Component {
                 if(item.groupings== "snacks"){
                   return<Card style={{flex: 0, borderRadius: 10}}>
                     <CardItem cardBody bordered >
-                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                      <Image source={item.image} style={styles.cardImage}/>
                     </CardItem>
                     <CardItem>
                       <Body>
@@ -92,7 +92,7 @@ export default class Chitos extends React.Component {
                 if(item.groupings== "drinks"){
                   return<Card style={{flex: 0, borderRadius: 10}}>
                     <CardItem cardBody bordered >
-                      <Image source={require('../../img/ph/dessert/1.jpg')} style={styles.cardImage}/>
+                      <Image source={item.image} style={styles.cardImage}/>
                     </CardItem>
                     <CardItem>
                       <Body>

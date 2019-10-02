@@ -53,6 +53,79 @@ export default (staticRestaurant = [
         time: "08:45 am - 12:00 am",
         navi: "ChitosR"
     },
+    {
+        name: "Van and Hylas",
+        thumb: require("../img/vh/vhthumb.jpg"),
+        image: require("../img/vh/vhlist.jpg"),
+        location: "Mira-Monte Subdivision Lucban",
+        type: "Filipino Restaurant",
+        time: "09:00 am - 09:00 pm",
+        navi: "VHR"
+    },
+    {
+        name: "Kubo Sizzlers 2",
+        thumb: require("../img/kubo/kubothumb.jpg"),
+        image: require("../img/kubo/kuboliah.jpg"),
+        location: "Brgy. Tinamnan Miramonte Circle Lucban",
+        type: "Filipino Restaurant",
+        time: "09:00 am - 09:30 pm",
+        navi: "KuboR"
+    },
+    {
+        name: "GROUNDZERO House of Pizza",
+        thumb: require("../img/groundzero/groundthumb.jpg"),
+        image: require("../img/groundzero/groundlist.jpg"),
+        location: "Quezon Avenue Corner Regidor St., Lucban, Quezon Province",
+        type: "Pizza Restaurant",
+        time: "10:00 am - 12:00 am",
+        navi: "GroundR"
+    },
+    {
+        name: "Cafe Florentina",
+        thumb: require("../img/cafeflorentina/cafefthumb.jpg"),
+        image: require("../img/cafeflorentina/cafeflist.jpg"),
+        location: "Miramonte Subdivision, Lucban, Quezon",
+        type: "Pizza Restaurant",
+        time: "11:00 am - 10:00 pm",
+        navi: "CafeFR"
+    },
+    {
+        name: "Abcede's Resto",
+        thumb: require("../img/abcede/abcedethumb.jpg"),
+        image: require("../img/abcede/abcedelist1.jpg"),
+        location: "Quezon Avenue Corner Balintawak St., Lucban, Quezon",
+        type: "Pizza Restaurant",
+        time: "10:00 am - 10:00 pm",
+        navi: "AbcedeR"
+    },
+    {
+        name: "C Bar + Restaurant",
+        thumb: require("../img/cbar/cbarthumb.jpg"),
+        image: require("../img/cbar/cbarlist.jpg"),
+        location: "83 Concepcion St. Lucban, Quezon",
+        type: "Bar · Bar & Grill · Filipino Restaurant",
+        time: "10:00 am - 01:00 am",
+        navi: "CbarR"
+    },
+    {
+        name: "Onyok's Bulaluhan",
+        thumb: require("../img/onyok/onyokthumb.jpg"),
+        image: require("../img/onyok/onyoklist.jpg"),
+        location: "95 Avenida Rizal Barangay 8, Lucban, Quezon",
+        type: "Restaurant",
+        time: "10:00 am - 09:00 pm",
+        navi: "OnyokR"
+    },
+    {
+        name: "Pepet",
+        thumb: require("../img/pepet/pepetthumb.jpg"),
+        image: require("../img/pepet/pepetlist.jpg"),
+        location: "0072 fidel rada st. Lucban, Quezon",
+        type: "Filipino Restaurant",
+        time: "11:00 am - 09:00 pm",
+        navi: "PepetR"
+    },
+
     
 
 ]);
