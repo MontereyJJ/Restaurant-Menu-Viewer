@@ -73,7 +73,7 @@ export default class App extends React.Component {
             value = {this.state.query}
           />
           <FlatList
-          data={this.state.item}
+          data={this.state.item.sort((a,b) => a.name.localeCompare(b.name))}
           //Item Separator View
           enableEmptySections={true}
           style={{ marginTop: 10, padding: 10, backgroundColor: '#dfdfdf' }}
@@ -84,7 +84,7 @@ export default class App extends React.Component {
               <Card style={{flex: 0, borderRadius: 10}}>
                 <CardItem bordered style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }} button onPress={()=> this.props.navigation.navigate(item.navi)}>
                   <Left>
-                    <Thumbnail source={item.thumb} />
+                    <Thumbnail style={{resizeMode: 'contain'}} source={item.thumb} />
                     <Text style={{fontSize: 18, fontWeight: 'bold'}}>{item.name}</Text>
                   </Left>
                   <Right>
@@ -131,6 +131,6 @@ const styles = StyleSheet.create({
   cardImage:{
     height: 200, 
     width: null, 
-    flex: 1
+    flex: 1,
   }
 });

@@ -80,6 +80,51 @@ export default (staticRestaurant = [
         time: "10:00 am - 12:00 am",
         navi: "GroundR"
     },
+    {
+        name: "Cafe Florentina",
+        thumb: require("../img/cafeflorentina/cafefthumb.jpg"),
+        image: require("../img/cafeflorentina/cafeflist.jpg"),
+        location: "Miramonte Subdivision, Lucban, Quezon",
+        type: "Pizza Restaurant",
+        time: "11:00 am - 10:00 pm",
+        navi: "CafeFR"
+    },
+    {
+        name: "Abcede's Resto",
+        thumb: require("../img/abcede/abcedethumb.jpg"),
+        image: require("../img/abcede/abcedelist1.jpg"),
+        location: "Quezon Avenue Corner Balintawak St., Lucban, Quezon",
+        type: "Pizza Restaurant",
+        time: "10:00 am - 10:00 pm",
+        navi: "AbcedeR"
+    },
+    {
+        name: "C Bar + Restaurant",
+        thumb: require("../img/cbar/cbarthumb.jpg"),
+        image: require("../img/cbar/cbarlist.jpg"),
+        location: "83 Concepcion St. Lucban, Quezon",
+        type: "Bar · Bar & Grill · Filipino Restaurant",
+        time: "10:00 am - 01:00 am",
+        navi: "CbarR"
+    },
+    {
+        name: "Onyok's Bulaluhan",
+        thumb: require("../img/onyok/onyokthumb.jpg"),
+        image: require("../img/onyok/onyoklist.jpg"),
+        location: "95 Avenida Rizal Barangay 8, Lucban, Quezon",
+        type: "Restaurant",
+        time: "10:00 am - 09:00 pm",
+        navi: "OnyokR"
+    },
+    {
+        name: "Pepet",
+        thumb: require("../img/pepet/pepetthumb.jpg"),
+        image: require("../img/pepet/pepetlist.jpg"),
+        location: "0072 fidel rada st. Lucban, Quezon",
+        type: "Filipino Restaurant",
+        time: "11:00 am - 09:00 pm",
+        navi: "PepetR"
+    },
 
     
 

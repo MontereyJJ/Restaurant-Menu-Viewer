@@ -20,6 +20,16 @@ import KuboInfo from './Restaurants/KuboInfo';
 import GroundzeroInfo from './Restaurants/GroundzeroInfo';
 import Groundzero from './Restaurants/Groundzero';
 import Kubo from './Restaurants/Kubo';
+import CafeF from './Restaurants/CafeF';
+import CafeFInfo from './Restaurants/CafeFInfo';
+import Abcede from './Restaurants/Abcede';
+import AbcedeInfo from './Restaurants/AbcedeInfo';
+import Cbar from './Restaurants/Cbar';
+import CbarInfo from './Restaurants/CbarInfo';
+import OnyokB from './Restaurants/OnyokB';
+import OnyokBInfo from './Restaurants/OnyokBInfo';
+import Pepet from './Restaurants/Pepet';
+import PepetInfo from './Restaurants/PepetInfo';
 
 class Main extends React.Component {
     static navigationOptions = {
@@ -202,7 +212,98 @@ const MainNavigator = createStackNavigator({
                             },
                             headerTintColor: "white",
         }
+    },
+    CafeFR: {
+        screen: createBottomTabNavigator({
+            Menu: CafeF,
+            Info: CafeFInfo
+        }),
+        navigationOptions: {title: 'Cafe Florentina',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    AbcedeR: {
+        screen: createBottomTabNavigator({
+            Menu: Abcede,
+            Info: AbcedeInfo
+        }),
+        navigationOptions: {title: 'Abcede\'s Resto',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    CbarR: {
+        screen: createBottomTabNavigator({
+            Menu: Cbar,
+            Info: CbarInfo
+        }),
+        navigationOptions: {title: 'C Bar + Restaurant',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    OnyokR: {
+        screen: createBottomTabNavigator({
+            Menu: OnyokB,
+            Info: OnyokBInfo
+        }),
+        navigationOptions: {title: 'Onyok\'s Bulaluhan',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
+    },
+    PepetR: {
+        screen: createBottomTabNavigator({
+            Menu: Pepet,
+            Info: PepetInfo
+        }),
+        navigationOptions: {title: 'Pepet',
+                            headerStyle: {
+                                backgroundColor: '#4050b5',
+            
+                            },
+                            headerTitleStyle: {
+                                textAlign: "center",
+                                flex: 1,
+                                textAlignVertical: 'center'
+                            },
+                            headerTintColor: "white",
+        }
     }
+
 });
 
 export default createAppContainer(MainNavigator);

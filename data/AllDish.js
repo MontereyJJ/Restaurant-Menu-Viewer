@@ -575,7 +575,7 @@ export default (allDish = [
 		name:"Buddy Burger",
 		price:"57",
 		groupings:"sandwiches",
-		image: require("../img/buddys/sandwiches/burger.png"),
+		image: require("../img/buddys/sandwiches/burger.jpg"),
         filter: "sandwiches",
         restau: "Buddys",
         navi: "BuddysR"

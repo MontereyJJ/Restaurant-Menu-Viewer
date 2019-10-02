@@ -111,13 +111,13 @@ export default ( VHDish=[
 		name:"Spag w/ Mini Burger",
 		price:"40",
 		groupings:"snacks",
-		image: require("../img/vh/saversmeal/combo1.png"),
+		image: require("../img/vh/saversmeal/combo1.jpg"),
 	},
 	{
 		name:"Spag w/ Footshort",
 		price:"40",
 		groupings:"snacks",
-		image: require("../img/vh/saversmeal/combo2.png"),
+		image: require("../img/vh/saversmeal/combo2.jpg"),
 	},
 	{
 		name:"Spag w/ Chicken",
@@ -159,7 +159,7 @@ export default ( VHDish=[
 		name:"Hotdog(jumbo)",
 		price:"30/40",
 		groupings:"snacks",
-		image: require("../img/vh/sandwiches/hotdogjumbo.png"),
+		image: require("../img/vh/sandwiches/hotdogjumbo.jpg"),
 	},
 	{
 		name:"Footlong",
@@ -201,7 +201,7 @@ export default ( VHDish=[
 		name:"Siomai w/ Egg",
 		price:"40",
 		groupings:"snacks",
-		image: require("../img/vh/sandwiches/siomaiwithegg.png"),
+		image: require("../img/vh/sandwiches/siomaiwithegg.jpg"),
 	},
 	{
 		name:"Siomai Steam/Fried",
